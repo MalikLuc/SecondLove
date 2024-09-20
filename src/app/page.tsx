@@ -24,7 +24,7 @@ export default function Home() {
               <h2 className="text-2xl font-semibold text-white mb-4">For Consignors</h2>
               <ul className="list-disc list-inside text-white space-y-2">
                 <li>Find available rack space easily</li>
-                <li>Keep track of your items' status</li>
+                <li>Keep track of your items&apos; status</li>
                 <li>Print professional labels</li>
                 <li>Maximize your second-hand sales</li>
               </ul>
