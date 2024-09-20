@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { format, addDays, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, isToday, addMonths } from 'date-fns';
+import { format, addDays, startOfMonth, endOfMonth, isSameMonth, isSameDay, isToday, addMonths } from 'date-fns';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 type BookingOption = 'do-it-yourself' | 'all-inclusive';

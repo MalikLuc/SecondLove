@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { User, Settings, Package, Calendar, FileText } from 'lucide-react';
 
 export default function Dashboard() {
-    const [user, setUser] = useState({
+    const [user] = useState({
         name: 'John Doe',
         email: 'john@example.com'
     });
