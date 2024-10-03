@@ -31,17 +31,16 @@ const WeeklyCalendar: React.FC<WeeklyCalendarProps> = ({ selectedDate, onSelectW
         return (
             <React.Fragment key={index}>
                 {index === 0 || !isSameMonth(weekStart, addWeeks(startOfCurrentWeek, index - 1)) ? (
-                    <div className="col-span-8 text-left text-lg font-bold text-white py-2 px-4 bg-indigo-700 bg-opacity-50">
+                    <div className="col-span-7 text-left text-lg font-bold text-white py-2 px-4 bg-indigo-700 bg-opacity-50">
                         {format(weekStart, 'MMMM yyyy')}
                     </div>
                 ) : null}
                 <div
-                    className={`grid grid-cols-8 gap-1 mb-1 items-center ${
+                    className={`grid grid-cols-7 gap-1 mb-1 items-center ${
                         isSelectable ? 'cursor-pointer hover:bg-indigo-200 hover:bg-opacity-50' : 'opacity-50'
                     } ${isSelected ? 'bg-indigo-600 text-white' : ''}`}
                     onClick={() => isSelectable && onSelectWeek(weekStart)}
                 >
-                    <div className="text-right pr-2 font-semibold">Week {format(weekStart, 'w')}</div>
                     {days.map((day, dayIndex) => (
                         <div
                             key={dayIndex}
@@ -62,9 +61,8 @@ const WeeklyCalendar: React.FC<WeeklyCalendarProps> = ({ selectedDate, onSelectW
     const weeks = Array.from({ length: 20 }, (_, i) => addWeeks(startOfCurrentWeek, i));
 
     return (
-        <div className="bg-white bg-opacity-10 rounded-lg p-4 max-h-[600px] overflow-y-auto">
-            <div className="grid grid-cols-8 gap-1 mb-2 sticky top-0 bg-indigo-800 z-10">
-                <div className="text-right pr-2 font-semibold text-white">Week</div>
+        <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-4 rounded-lg max-h-[600px] overflow-y-auto">
+            <div className="grid grid-cols-7 gap-1 mb-2 sticky top-0 bg-indigo-800 z-10">
                 {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
                     <div key={day} className="text-center text-white font-semibold">
                         {day}

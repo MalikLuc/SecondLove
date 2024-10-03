@@ -55,7 +55,7 @@ export default function RackBooking() {
     return (
         <div className="w-full max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2">
+                <div className="lg:col-span-2 space-y-6">
                     <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-4 rounded-lg">
                         <h3 className="text-xl font-semibold text-white mb-4">Select Start Week:</h3>
                         <WeeklyCalendar
@@ -64,7 +64,7 @@ export default function RackBooking() {
                             duration={duration}
                         />
                     </div>
-                    <div className="mt-6 bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-4 rounded-lg">
+                    <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-4 rounded-lg">
                         <AvailableRacks
                             startDate={startDate}
                             endDate={endDate}
