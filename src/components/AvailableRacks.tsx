@@ -31,7 +31,7 @@ const AvailableRacks: React.FC<AvailableRacksProps> = ({ startDate, endDate, onS
     };
 
     if (!startDate || !endDate) {
-        return <p className="text-white">Please select a date range to view available racks.</p>;
+        return <p className="text-gray-700">Please select a date range to view available racks.</p>;
     }
 
     const availableRacks = fetchAvailableRacks(startDate, endDate);
@@ -43,8 +43,8 @@ const AvailableRacks: React.FC<AvailableRacksProps> = ({ startDate, endDate, onS
 
     return (
         <div className="mt-4">
-            <h3 className="text-xl font-semibold mb-4 text-white">Available Racks:</h3>
-            <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-4 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">Available Racks:</h3>
+            <div className="bg-white rounded-lg shadow">
                 <div className="relative" style={{ paddingBottom: '66.67%' }}> {/* 2:3 aspect ratio */}
                     <svg
                         className="absolute top-0 left-0 w-full h-full"
@@ -52,11 +52,11 @@ const AvailableRacks: React.FC<AvailableRacksProps> = ({ startDate, endDate, onS
                         preserveAspectRatio="xMidYMid meet"
                     >
                         {/* Shop outline */}
-                        <rect x="10" y="10" width="280" height="180" fill="none" stroke="white" strokeWidth="2" />
+                        <rect x="10" y="10" width="280" height="180" fill="none" stroke="#4B5563" strokeWidth="2" />
 
                         {/* Entrance */}
-                        <rect x="135" y="10" width="30" height="10" fill="white" />
-                        <text x="150" y="35" textAnchor="middle" fill="white" fontSize="12">Entrance</text>
+                        <rect x="135" y="10" width="30" height="10" fill="#4B5563" />
+                        <text x="150" y="35" textAnchor="middle" fill="#4B5563" fontSize="12">Entrance</text>
 
                         {/* Racks */}
                         {availableRacks.map((rack) => (
@@ -66,15 +66,15 @@ const AvailableRacks: React.FC<AvailableRacksProps> = ({ startDate, endDate, onS
                                     y={rack.y}
                                     width={rack.width}
                                     height={rack.height}
-                                    fill={selectedRack === rack.id ? "rgb(99 102 241)" : "rgb(199 210 254)"}
-                                    stroke="white"
+                                    fill={selectedRack === rack.id ? "#10B981" : "#D1FAE5"}
+                                    stroke="#059669"
                                     strokeWidth="2"
                                 />
                                 <text
                                     x={rack.x + rack.width / 2}
                                     y={rack.y + rack.height / 2 + 5}
                                     textAnchor="middle"
-                                    fill="black"
+                                    fill="#059669"
                                     fontSize="12"
                                 >
                                     {rack.name}

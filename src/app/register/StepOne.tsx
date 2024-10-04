@@ -65,7 +65,7 @@ export default function StepOne({ onSubmit }: StepOneProps) {
             </div>
             <button
                 type="submit"
-                className="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-purple-green hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={password.length < 8}
             >
                 Next

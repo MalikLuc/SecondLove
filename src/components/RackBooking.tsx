@@ -53,18 +53,18 @@ export default function RackBooking() {
     const { price, commission } = pricingModel[option][duration];
 
     return (
-        <div className="w-full max-w-6xl mx-auto">
+        <div className="w-full max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-lg">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-6">
-                    <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-4 rounded-lg">
-                        <h3 className="text-xl font-semibold text-white mb-4">Select Start Week:</h3>
+                    <div className="bg-gray-50 p-4 rounded-lg shadow">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-4">Select Start Week:</h3>
                         <WeeklyCalendar
                             selectedDate={startDate}
                             onSelectWeek={handleSelectWeek}
                             duration={duration}
                         />
                     </div>
-                    <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-4 rounded-lg">
+                    <div className="bg-gray-50 p-4 rounded-lg shadow">
                         <AvailableRacks
                             startDate={startDate}
                             endDate={endDate}
@@ -74,13 +74,13 @@ export default function RackBooking() {
                 </div>
 
                 <div className="space-y-6">
-                    <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-4 rounded-lg">
-                        <h3 className="text-lg font-semibold mb-3 text-white">Select Option:</h3>
+                    <div className="bg-gray-50 p-4 rounded-lg shadow">
+                        <h3 className="text-lg font-semibold mb-3 text-gray-800">Select Option:</h3>
                         <div className="space-y-2">
-                            <label className="flex items-center space-x-3 text-white">
+                            <label className="flex items-center space-x-3 text-gray-700">
                                 <input
                                     type="radio"
-                                    className="form-radio text-indigo-600"
+                                    className="form-radio text-green-600"
                                     name="option"
                                     value="do-it-yourself"
                                     checked={option === 'do-it-yourself'}
@@ -88,10 +88,10 @@ export default function RackBooking() {
                                 />
                                 <span>Do it yourself</span>
                             </label>
-                            <label className="flex items-center space-x-3 text-white">
+                            <label className="flex items-center space-x-3 text-gray-700">
                                 <input
                                     type="radio"
-                                    className="form-radio text-indigo-600"
+                                    className="form-radio text-green-600"
                                     name="option"
                                     value="all-inclusive"
                                     checked={option === 'all-inclusive'}
@@ -102,13 +102,13 @@ export default function RackBooking() {
                         </div>
                     </div>
 
-                    <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg p-4 rounded-lg">
-                        <h3 className="text-lg font-semibold mb-3 text-white">Select Duration:</h3>
+                    <div className="bg-gray-50 p-4 rounded-lg shadow">
+                        <h3 className="text-lg font-semibold mb-3 text-gray-800">Select Duration:</h3>
                         <div className="space-y-2">
-                            <label className="flex items-center space-x-3 text-white">
+                            <label className="flex items-center space-x-3 text-gray-700">
                                 <input
                                     type="radio"
-                                    className="form-radio text-indigo-600"
+                                    className="form-radio text-green-600"
                                     name="duration"
                                     value="7-days"
                                     checked={duration === '7-days'}
@@ -116,10 +116,10 @@ export default function RackBooking() {
                                 />
                                 <span>1 week</span>
                             </label>
-                            <label className="flex items-center space-x-3 text-white">
+                            <label className="flex items-center space-x-3 text-gray-700">
                                 <input
                                     type="radio"
-                                    className="form-radio text-indigo-600"
+                                    className="form-radio text-green-600"
                                     name="duration"
                                     value="14-days"
                                     checked={duration === '14-days'}
@@ -130,9 +130,9 @@ export default function RackBooking() {
                         </div>
                     </div>
 
-                    <div className="bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg p-6 rounded-lg">
-                        <h3 className="text-xl font-semibold mb-4 text-white">Booking Summary:</h3>
-                        <div className="space-y-2 text-white">
+                    <div className="bg-green-50 p-6 rounded-lg shadow">
+                        <h3 className="text-xl font-semibold mb-4 text-gray-800">Booking Summary:</h3>
+                        <div className="space-y-2 text-gray-700">
                             <p><strong>Option:</strong> {option === 'do-it-yourself' ? 'Do it yourself' : 'All inclusive'}</p>
                             <p><strong>Duration:</strong> {duration === '7-days' ? '1 week' : '2 weeks'}</p>
                             <p><strong>Start Date:</strong> {startDate ? format(startDate, 'dd.MM.yyyy') : 'Not selected'}</p>
@@ -142,8 +142,8 @@ export default function RackBooking() {
                             <p><strong>Commission:</strong> {commission}%</p>
                         </div>
                         <button
-                            className={`mt-6 w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-md transition duration-150 ease-in-out transform hover:scale-105 ${
-                                startDate && selectedRackId ? 'hover:bg-indigo-700' : 'opacity-50 cursor-not-allowed'
+                            className={`mt-6 w-full bg-green-600 text-white font-bold py-2 px-4 rounded-md transition duration-150 ease-in-out transform hover:scale-105 ${
+                                startDate && selectedRackId ? 'hover:bg-green-700' : 'opacity-50 cursor-not-allowed'
                             }`}
                             disabled={!startDate || !selectedRackId}
                         >
